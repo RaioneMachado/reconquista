@@ -296,3 +296,30 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+// JavaScript para animar os números
+document.addEventListener('DOMContentLoaded', function() {
+  const statValues = document.querySelectorAll('.stat-value');
+  
+  statValues.forEach(stat => {
+    const target = parseInt(stat.getAttribute('data-count'));
+    const suffix = stat.textContent.includes('%') ? '%' : '';
+    const duration = 2000;
+    const start = 0;
+    const increment = target / (duration / 16);
+    
+    let current = start;
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= target) {
+        clearInterval(timer);
+        current = target;
+      }
+      stat.textContent = Math.floor(current) + suffix;
+    }, 16);
+  });
+  
+  // Efeito de pulso no botão CTA
+  setInterval(() => {
+    document.querySelector('.cta-button').classList.toggle('pulse');
+  }, 2000);
+});
