@@ -63,11 +63,10 @@ body {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(rgba(12, 10, 10, 0.7), rgba(12, 10, 10, 0.7)), url('images/hero-bg.jpg');
-    background-size: cover;
-    background-position: center;
+    background: linear-gradient(rgba(12, 10, 10, 0.9), rgba(12, 10, 10, 0.9));
     padding: 60px 0;
     position: relative;
+    text-align: center;
 }
 
 .hero::before {
@@ -84,15 +83,18 @@ body {
 .hero-content {
     position: relative;
     z-index: 1;
-    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .hero h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 900;
     margin-bottom: 20px;
     line-height: 1.2;
     text-transform: uppercase;
+    color: #fff;
 }
 
 .hero h1 span {
@@ -100,59 +102,29 @@ body {
 }
 
 .subtitle {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin-bottom: 30px;
     font-weight: 600;
+    color: #ddd;
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
 }
 
-.hero-video {
-    margin: 30px 0;
-    position: relative;
+.hero-image-container {
+    margin: 30px auto;
     max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.video-placeholder {
-    position: relative;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(255, 0, 0, 0.3);
 }
 
-.video-placeholder img {
+.hero-image {
     width: 100%;
+    height: auto;
     display: block;
-}
-
-.play-button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80px;
-    height: 80px;
-    background-color: rgba(255, 0, 0, 0.8);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.play-button:hover {
-    background-color: rgba(255, 0, 0, 1);
-    transform: translate(-50%, -50%) scale(1.1);
-}
-
-.play-button i {
-    color: white;
-    font-size: 30px;
-    margin-left: 5px;
+    object-fit: contain;
+    border-radius: 10px;
 }
 
 .cta-box {
@@ -161,7 +133,7 @@ body {
     border-radius: 10px;
     padding: 30px;
     max-width: 500px;
-    margin: 0 auto;
+    margin: 30px auto 0;
     box-shadow: 0 10px 30px rgba(255, 0, 0, 0.2);
 }
 
@@ -189,7 +161,7 @@ body {
 
 .cta-button {
     display: block;
-    background-color: #ff0000;
+    background: linear-gradient(to right, #ff0000, #cc0000);
     color: white;
     text-align: center;
     padding: 15px;
@@ -206,9 +178,8 @@ body {
 }
 
 .cta-button:hover {
-    background-color: #cc0000;
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(255, 0, 0, 0.3);
+    box-shadow: 0 10px 20px rgba(255, 0, 0, 0.4);
 }
 
 .secure-checkout {
@@ -224,6 +195,43 @@ body {
     height: 20px;
 }
 
+/* Responsividade */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    .hero-image-container {
+        margin: 20px auto;
+    }
+    
+    .cta-box {
+        padding: 20px;
+    }
+    
+    .current-price {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 40px 0;
+    }
+    
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .cta-button {
+        font-size: 1rem;
+        padding: 12px;
+    }
+}
 /* Seção de Problema - Versão Aprimorada */
 .problem-section {
     padding: 80px 0;
@@ -1636,7 +1644,7 @@ body {
 }
 
 .current-price::before {
-    content: 'R$';
+
     font-size: 2rem;
     position: absolute;
     top: 10px;
