@@ -341,3 +341,29 @@ function updateCountdown() {
 
 setInterval(updateCountdown, 1000);
 updateCountdown(); // Inicia imediatamente
+const nomes = [
+  "Maria de São Paulo acabou de comprar",
+  "João de Belo Horizonte acabou de comprar",
+  "Ana de Curitiba acabou de comprar",
+  "Carlos de Salvador acabou de comprar",
+  "Fernanda do Rio de Janeiro acabou de comprar"
+];
+
+const notificacao = document.getElementById('notificacao-compra');
+const texto = document.getElementById('notificacao-texto');
+
+function mostrarNotificacao() {
+  const mensagem = nomes[Math.floor(Math.random() * nomes.length)];
+  texto.textContent = mensagem;
+  notificacao.style.display = 'block';
+  notificacao.style.opacity = 1;
+
+  setTimeout(() => {
+    notificacao.style.opacity = 0;
+    setTimeout(() => {
+      notificacao.style.display = 'none';
+    }, 500);
+  }, 4000);
+}
+
+setInterval(mostrarNotificacao, 6000);
