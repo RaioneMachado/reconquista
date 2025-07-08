@@ -161,7 +161,7 @@ body {
 
 .cta-button {
     display: block;
-    background: linear-gradient(to right, #ff0000, #cc0000);
+    background: linear-gradient(to right, #2a8613, #2a8613);
     color: white;
     text-align: center;
     padding: 15px;
@@ -1681,9 +1681,9 @@ body {
 .cta-button {
     display: block;
     background: linear-gradient(to right, 
-                #ff0000 0%, 
-                #ff3333 50%, 
-                #ff0000 100%);
+                #4A9E34 0%, 
+                #4A9E34 50%, 
+                #4A9E34 100%);
     background-size: 200% auto;
     color: white;
     text-align: center;
@@ -1723,7 +1723,7 @@ body {
 .cta-button:hover {
     background-position: 100% center;
     transform: translateY(-5px) scale(1.03);
-    box-shadow: 0 15px 50px rgba(255,0,0,0.7);
+    box-shadow: 0 15px 50px #4A9E34;
 }
 
 .cta-button:hover::before {
@@ -2348,7 +2348,7 @@ footer {
 
 .cta-button {
     display: inline-block;
-    background: linear-gradient(to right, #ff0000 0%, #ff3333 100%);
+    background: linear-gradient(to right, #4A9E34 0%, #4A9E34 100%);
     color: white;
     padding: 20px 50px;
     border-radius: 50px;
@@ -2365,7 +2365,7 @@ footer {
 
 .cta-button:hover {
     transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 15px 40px rgba(255,0,0,0.7);
+    box-shadow: 0 15px 40px #4A9E34;
 }
 
 .guarantee-badge {
@@ -3499,4 +3499,46 @@ input, textarea, select, button {
   font-size: 14px;
   z-index: 9999;
   transition: opacity 0.5s ease;
+}
+/* Altera APENAS os botões para verde (com animação de pulsar) */
+.cta-button, 
+.hero .cta-button,
+.final-offer .cta-button,
+.solution-section .cta-button,
+.problem-section .cta-button,
+.content-section .cta-button,
+.testimonials-section .cta-button,
+.reconquest-clock-section .cta-button,
+.experts-section .cta-button,
+.expert-section-v1 .cta-button,
+.expert-section-v2 .cta-button,
+.whatsapp-button a {
+    background: linear-gradient(to right, #2a8613, #2a8613) !important;
+    box-shadow: 0 10px 30px rgba(42, 134, 19, 0.5) !important;
+    animation: pulse 2s infinite !important;
+}
+
+/* Efeito hover dos botões */
+.cta-button:hover,
+.hero .cta-button:hover,
+.final-offer .cta-button:hover,
+.solution-section .cta-button:hover,
+.problem-section .cta-button:hover,
+.content-section .cta-button:hover,
+.testimonials-section .cta-button:hover,
+.reconquest-clock-section .cta-button:hover,
+.experts-section .cta-button:hover,
+.expert-section-v1 .cta-button:hover,
+.expert-section-v2 .cta-button:hover,
+.whatsapp-button a:hover {
+    background: linear-gradient(to right, #2a8613, #2a8613) !important;
+    box-shadow: 0 15px 40px rgba(42, 134, 19, 0.7) !important;
+    transform: translateY(-3px) !important;
+}
+
+/* Animação de pulsar */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
 }
